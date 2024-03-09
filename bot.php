@@ -2,7 +2,7 @@
 
 Class BotClass
 {
-    public static $token = "7163470478:AAHUSf1BI59yTL1LHiYTnpQ-n_UefU6QbhE";
+    public static $token = "";
 
 
     private  static function maniMethod($method, $params)
