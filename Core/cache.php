@@ -1,12 +1,16 @@
 <?php
+namespace Core;
 $cacheJson = file_get_contents('cache.json');
 $cacheJson = json_decode($cacheJson, true);
 
+
+if (empty($cacheJson)){
+    file_put_contents('cache.json','[]');
+
+}
 class CacheClass
 {
-
     public $cacheJson;
-
 
     public function __construct($cacheJson)
     {

@@ -1,0 +1,17 @@
+{
+    "name": "mmdrsdev/botlibrary",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mmdrsdev\\Botlibrary\\": "/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mohammadrostamiorg",
+            "email": "mohammad.jayant@gmail.com"
+        }
+    ],
+    "require": {}
+}

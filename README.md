@@ -1,1 +1,3 @@
-My bot lib
+# Bot lib 
+
+## a simple telegram bot library for php
