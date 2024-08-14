@@ -1,14 +1,17 @@
 <?php
 
-Class BotClass
+namespace Core;
+
+class Bot
 {
-    public static $token = "";
+    public  static $token = "";
 
 
-    private  static function maniMethod($method, $params)
+    private static function maniMethod($method, $params)
     {
-        $url = "https://api.telegram.org/bot".self::$token;
-        $ch = curl_init($url . "/".$method);
+        self::$token = env("TOKEN");
+        $url = "https://api.telegram.org/bot" . self::$token;
+        $ch = curl_init($url . "/" . $method);
         curl_setopt($ch, CURLOPT_HEADER, false);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POST, 1);
@@ -16,6 +19,7 @@ Class BotClass
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
         curl_close($ch);
+
     }
 
     public static function sendMsg($chatId, $msg, $keyboard = [])
@@ -30,10 +34,11 @@ Class BotClass
                 'one_time_keyboard' => true
             ])
         ];
-        self::maniMethod('sendMessage',$params);
+        self::maniMethod('sendMessage', $params);
 
     }
-    public static function sendPic($chatId, $photo,$caption = "", $keyboard = [])
+
+    public static function sendPic($chatId, $photo, $caption = "", $keyboard = [])
     {
         $params = [
             'chat_id' => $chatId,
@@ -46,16 +51,8 @@ Class BotClass
                 'one_time_keyboard' => true
             ])
         ];
-        self::maniMethod('sendPhoto',$params);
+        self::maniMethod('sendPhoto', $params);
 
     }
 
-
-
 }
-
-
-
-
-
-?>⏎

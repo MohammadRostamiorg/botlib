@@ -1,11 +1,15 @@
 {
     "name": "mmdrsdev/botlibrary",
-    "type": "library",
+    "type": "project",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Mmdrsdev\\Botlibrary\\": "/"
-        }
+            "App\\": "app/",
+            "Core\\": "core/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
     },
     "authors": [
         {
@@ -13,5 +17,7 @@
             "email": "mohammad.jayant@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": "^8.0.0"
+    }
 }
